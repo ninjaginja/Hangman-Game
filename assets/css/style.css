@@ -1,5 +1,5 @@
-.header-img {
-  margin: 0;
+.col-lg-12.header-img {
+  margin: 0 auto;
   padding: 0;
   width: 100%;
 }
