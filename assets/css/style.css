@@ -1,5 +1,35 @@
-.col-lg-12.header-img {
+.header-img {
   margin: 0 auto;
   padding: 0;
   width: 100%;
+}
+
+.main {
+  margin-top: 40px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h4 {
+  text-transform: uppercase;
+  color: #0fc46f;
+
+}
+
+.img-holder {
+  border: 1px solid #000000;
+  padding: 5px;
+}
+
+#letters {
+  border: 1px dotted #000000;
+  min-height: 100px;
 }

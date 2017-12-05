@@ -22,11 +22,43 @@
 <body>
 
   <!-- Header with full-width image -->
-  <div class="col-lg-12 header-img">
-    <img class="img-responsive" src="assets/images/Hangman-header.png">
-  </div>
+  <header class="container header-img">
+    <div class="row">
+      <div class="col-md-12">
+        <img class="img-responsive" src="assets/images/Hangman-header.png">
+      </div>
+    </div>
+  </header>
   <!-- End header image -->
 
+  <!-- Main content -->
+  <div class="container main">
+    <div class="row">
+
+      <!-- Game instructions and inputs -->
+      <div class="col-md-7">
+        <h1>Let's Play!</h1><br>
+        <h4><strong>Press any key to get started</strong></h4>
+
+        <!-- Answer placeholders -->
+        <h2>Your Puzzle:</h2>
+        <div id="answer"></div>
+
+        <!-- List of guessed letters -->
+        <h2>Letter Graveyard:</h2>
+          <div id="letters"></div>
+
+      </div>
+      <!-- End game inputs -->
+
+      <!-- Image content -->
+      <div class="col-md-5 img-holder">
+        <img class="img-responsive" src="assets/images/Christmas-Vacation.jpg">
+      </div>
+      <!-- End image -->
+
+    </div>
+  </div>
 
 </body>
 </html>
