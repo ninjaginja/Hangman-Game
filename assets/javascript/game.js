@@ -3,44 +3,48 @@ window.onload = function() {
 // Define all the letter options with an array
 var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
 
-// Create set of answers with an array
-var answers = ["shitter was full", "griswolds", "station wagon", "cousin eddie", "tree sap"];
 
 // Set # of guesses counter equal to 12
 
 var guessCounter = 12;
 
-// Use for loop to call first answer, followed by new game when solved or # guesses reaches 0
-// for (var i = 0; i < answers.length; i++) {
+// Create variable to determine if in a current Game
+var gameAnswer1 = false;
+var gameAnswer2 = false;
+var gameAnswer3 = false;
+var gameAnswer3 = false;
+
+// Create variables with answers
+
+var answer1 = "shitter was full";
+var answer2 = "griswolds";
+var answer3 = "station wagon";
+var answer4 = "cousin eddie";
+var answer5 = "tree sap";
 
   // Display placeholders to account for each letter of the answer
-  for (var j = 0; j < answers[0].length; j++) {
-    console.log("_");
+  for (var j = 0; j < answer1.length; j++) {
     var placeholderDiv = document.createElement("div");
-    // console.log(placeholderDiv);
-    placeholderDiv.className = "letter-box";
-    // console.log(placeholderDiv);
+    if (answer1[j] != " ") {
+      placeholderDiv.className = "letter-box";
+      // var testVar = document.getElementById("answer").appendChild(placeholderDiv);
+    } else {
+      placeholderDiv.className = "space";
+    }
     var testVar = document.getElementById("answer").appendChild(placeholderDiv);
 
   };
 
-
-
-
-  // };
-
-
-
-
-
-  // function insertPlaceholders(currentAnswer) {
-  //   currentAnswer.length
-  //
-  // };
-
-
-
   // Detect user input upon keystroke
+
+  var userInput = document.getElementById("user-input");
+  console.log(userInput);
+  document.onkeyup = function(event) {
+    var userInput = document.getElementById("user-input");
+    userInput.innerHTML = event.key;
+    console.log(userInput);
+  };
+
 
   // Reduce # of guesses counter by one upon each new letter keystroke
 
@@ -52,15 +56,5 @@ var guessCounter = 12;
 
 
 
-
-
-// OLD CODE ...
-// var userInput = document.getElementById("user-input");
-// console.log(userInput);
-// document.onkeyup = function(event) {
-//   var userInput = document.getElementById("user-input");
-//   userInput.innerHTML = event.key;
-//   console.log(userInput);
-// };
 
 };
