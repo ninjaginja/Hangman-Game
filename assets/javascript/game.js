@@ -12,7 +12,7 @@ var guessCounter = 12;
 var gameAnswer1 = false;
 var gameAnswer2 = false;
 var gameAnswer3 = false;
-var gameAnswer3 = false;
+var gameAnswer4 = false;
 
 // Create variables with answers
 
@@ -22,28 +22,54 @@ var answer3 = "station wagon";
 var answer4 = "cousin eddie";
 var answer5 = "tree sap";
 
+
+// Start Game 1 by setting to true
+
+gameAnswer1 = true;
+
   // Display placeholders to account for each letter of the answer
+
   for (var j = 0; j < answer1.length; j++) {
+
     var placeholderDiv = document.createElement("div");
     if (answer1[j] != " ") {
       placeholderDiv.className = "letter-box";
-      // var testVar = document.getElementById("answer").appendChild(placeholderDiv);
+      placeholderDiv.setAttribute("letter-id", answer1[j]);
+
     } else {
       placeholderDiv.className = "space";
     }
     var testVar = document.getElementById("answer").appendChild(placeholderDiv);
-
   };
 
   // Detect user input upon keystroke
+  //
+  // var userInput = document.getElementById("user-input");
+  // document.onkeyup = function(event) {
+  //   var userInput = document.getElementById("user-input");
+  //   userInput.innerHTML = event.key;
+  // };
 
-  var userInput = document.getElementById("user-input");
-  console.log(userInput);
-  document.onkeyup = function(event) {
+  var guessedLetters = [];
+
+
     var userInput = document.getElementById("user-input");
-    userInput.innerHTML = event.key;
-    console.log(userInput);
+    document.onkeyup = function(event) {
+      userInput.innerHTML = event.key;
+    };
+
+  if (userInput == "s") {
+    var userInput = document.getElementById("s");
+    document.onkeyup = function(event) {
+      userInput.innerHTML = event.key;
+    };
   };
+
+
+
+
+  // Match if userInput == placeholderDiv(value), write letter to appropriate div
+
 
 
   // Reduce # of guesses counter by one upon each new letter keystroke
