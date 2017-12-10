@@ -4,9 +4,10 @@ window.onload = function() {
 var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
 
 
-// Set # of guesses counter equal to 12
+// Set # of guesses counter equal to 12 and create variable to hold guessed letters
 
 var guessCounter = 12;
+var guessesSoFar = [];
 
 // Create variable to determine if in a current Game
 var gameAnswer1 = false;
@@ -42,33 +43,23 @@ gameAnswer1 = true;
     var testVar = document.getElementById("answer").appendChild(placeholderDiv);
   };
 
-  // Detect user input upon keystroke
-  //
-  // var userInput = document.getElementById("user-input");
-  // document.onkeyup = function(event) {
-  //   var userInput = document.getElementById("user-input");
-  //   userInput.innerHTML = event.key;
-  // };
+  // Write function to detect user input on keystroke and write to "user-input" field
 
-  var guessedLetters = [];
+  document.onkeyup = function(event) {
 
+    var userInput = event.key;
+    guessCounter--;
+    document.querySelector("#guesses-left").innerHTML = guessCounter;
 
-    var userInput = document.getElementById("user-input");
-    document.onkeyup = function(event) {
-      userInput.innerHTML = event.key;
-    };
+    guessesSoFar.push(userInput);
+    document.querySelector("#user-input").innerHTML = guessesSoFar;
 
-  if (userInput == "s") {
-    var userInput = document.getElementById("s");
-    document.onkeyup = function(event) {
-      userInput.innerHTML = event.key;
-    };
+    console.log(guessesSoFar);
   };
 
-
-
-
   // Match if userInput == placeholderDiv(value), write letter to appropriate div
+
+
 
 
 
