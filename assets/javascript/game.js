@@ -103,7 +103,11 @@ gameAnswer1 = true;
       guessCounter--;
       document.querySelector("#guesses-left").innerHTML = guessCounter;
     }
+
+
   };
+
+
 
 if (guessCounter === 0) {
   alert("Sorry, you lose!");
