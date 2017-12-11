@@ -41,6 +41,14 @@ h4 {
   display: inline-block;
 }
 
+.filled-letter-box {
+  border-bottom: none;
+  padding: 20px 10px 20px 10px;
+  margin: 5px;
+  display: inline-block;
+  font-size: 22px;
+}
+
 .space {
   border: none;
   padding: 20px 10px 20px 10px;

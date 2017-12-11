@@ -55,44 +55,60 @@ gameAnswer1 = true;
 
   };
 
-  // Write function to detect user input on keystroke and write to "user-input" field, reduce guessCounter by 1 on each keystroke.
-  // Match if userInput matches HTML span id value, write letter to appropriate span (using value identifier.)
+  // Write function to detect user input on keystroke and write to "user-input" field
+  // Match if userInput matches HTML span id value, write letter to appropriate span
+  // Reduce guessCounter by 1 on each incorrect keystroke
 
   document.onkeyup = function(event) {
-
     userInput = event.key;
-    console.log(userInput);
-    guessCounter--;
-    document.querySelector("#guesses-left").innerHTML = guessCounter;
-
     guessesSoFar.push(userInput);
     document.querySelector("#user-input").innerHTML = guessesSoFar;
 
+
+    // In the case of multiple letters, Why is this only writing to one field at a time?
     if (userInput == "s") {
-      document.querySelector(".s").innerHTML = userInput
+      document.querySelector(".s").innerHTML = userInput;
+      document.querySelector(".s").className = "filled-letter-box";
     } else if (userInput == "h") {
-      document.querySelector(".h").innerHTML = userInput
+      document.querySelector(".h").innerHTML = userInput;
+      document.querySelector(".h").className = "filled-letter-box";
     } else if (userInput == "i") {
-      document.querySelector(".i").innerHTML = userInput
+      document.querySelector(".i").innerHTML = userInput;
+      document.querySelector(".i").className = "filled-letter-box";
     } else if (userInput == "t") {
-      document.querySelector(".t").innerHTML = userInput
+      document.querySelector(".t").innerHTML = userInput;
+      document.querySelector(".t").className = "filled-letter-box";
     } else if (userInput == "e") {
-      document.querySelector(".e").innterHTML = userInput
+      document.querySelector(".e").innerHTML = userInput;
+      document.querySelector(".e").className = "filled-letter-box";
     } else if (userInput == "r") {
-      document.querySelector(".r").innterHTML = userInput
+      document.querySelector(".r").innerHTML = userInput;
+      document.querySelector(".r").className = "filled-letter-box";
     } else if (userInput == "w") {
-      document.querySelector(".w").innterHTML = userInput
+      document.querySelector(".w").innerHTML = userInput;
+      document.querySelector(".w").className = "filled-letter-box";
     } else if (userInput == "a") {
-      document.querySelector(".a").innterHTML = userInput
+      document.querySelector(".a").innerHTML = userInput;
+      document.querySelector(".a").className = "filled-letter-box";
     } else if (userInput == "f") {
-      document.querySelector(".f").innterHTML = userInput
+      document.querySelector(".f").innerHTML = userInput;
+      document.querySelector(".f").className = "filled-letter-box";
     } else if (userInput == "u") {
-      document.querySelector(".u").innterHTML = userInput
+      document.querySelector(".u").innerHTML = userInput;
+      document.querySelector(".u").className = "filled-letter-box";
     } else if (userInput == "l") {
-      document.querySelector(".l").innterHTML = userInput
+      document.querySelector(".l").innerHTML = userInput;
+      document.querySelector(".l").className = "filled-letter-box";
+    } else {
+      guessCounter--;
+      document.querySelector("#guesses-left").innerHTML = guessCounter;
     }
   };
 
+if (guessCounter === 0) {
+  alert("Sorry, you lose!");
+  reset();
+}
 
 
 };
